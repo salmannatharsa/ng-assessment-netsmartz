@@ -1,0 +1,38 @@
+@import "../../app.component.scss";
+.totalCardSection {
+  @include gridSection(190px, 20px);
+  margin-block: 13px;
+}
+
+.blogs {
+  @include gridSection(290px, 50px);
+  padding: 30px 36px;
+  @include respondLayout($breakpoint-small) {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  &-img {
+    height: 73px;
+    width: 133px;
+    background: #75757557;
+    border-radius: 4px;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    h4 {
+      @include fontcountrol($headerColor, 20px, 700);
+    }
+    p {
+      @include fontcountrol($sudHeaderColor, 14px, 400);
+    }
+  }
+}

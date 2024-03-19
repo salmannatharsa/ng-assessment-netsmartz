@@ -1,0 +1,57 @@
+@import "../../app.component.scss";
+
+.blogs {
+  padding-block: 20px;
+  @include gridSection(500px, 20px);
+  @include respondLayout($breakpoint-medium) {
+    display: flex;
+    flex-direction: column;
+  }
+  &-card {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 28px 28px 28px 18px;
+    border-radius: 8px;
+    background: #fff;    
+    &-img {
+      flex: 1 1 189px;
+      background: #75757575;
+      border-radius: 8px;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &-body {
+      flex: 1.2 1 235px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      h1 {
+        @include fontcountrol($headerColor, clamp(24px, 3vw, 35px), 700);
+      }
+      p {
+        @include fontcountrol($sudHeaderColor, 16px, 400);
+      }
+      a {
+        @include fontcountrol($PrimaryColor, 16px, 400);
+        text-decoration: underline;
+      }
+    }
+    &-footer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      p {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex: 1 1 150px;
+        @include fontcountrol($sudHeaderColor, 16px, 400);
+      }
+    }
+  }
+}

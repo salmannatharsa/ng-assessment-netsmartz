@@ -1,0 +1,26 @@
+@import "../../app.component.scss";
+
+.card {
+  background: color($white);
+  border-radius: 8px;
+  padding: 9px 22px 16px 22px;
+  &-icon {
+    color: color($PrimaryColor);
+    text-align: right;
+    padding-bottom: clamp(20px, 3vw, 30px);
+    .mat-icon {
+      color: currentColor;
+      transform: scale(1.5)
+    }
+  }
+  &-body {
+    h1 {
+      @include fontcountrol($headerColor, clamp(24px, 3vw, 40px), 700);
+      line-height: 120%;
+    }
+    h6 {
+      @include fontcountrol($subTitleTextColor, clamp(16px, 3vw, 20px), 700);
+      line-height: 120%;
+    }
+  }
+}

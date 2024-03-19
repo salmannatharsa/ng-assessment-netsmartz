@@ -1,0 +1,195 @@
+// / Global css /
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0;
+}
+
+a:hover {
+  text-decoration: none !important;
+  color: unset;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+input:focus-visible {
+  outline: unset;
+}
+
+img,
+svg,
+i {
+  cursor: pointer;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+ul {
+  padding: 0;
+  margin: 0 !important;
+}
+
+button:focus,
+input:focus,
+input:focus,
+textarea,
+textarea:focus,
+select:focus,
+select:focus-visible {
+  outline: 0;
+  font-family: "proxima-nova", sans-serif;
+}
+
+section,
+footer,
+header {
+  width: 100%;
+  display: block;
+  float: left;
+}
+
+// font
+@import url("https://fonts.googleapis.com/css?family=Proxima+Nova");
+
+// color code
+
+$white: #fff;
+$PrimaryColor: #47a1f6;
+$BackgroundColor: #f0f5fb;
+$TextColor: #668094;
+$headerColor: #253244;
+$secondaryColor: #f8fbfd;
+$sudHeaderColor: #506e85;
+$subTextColor: #4d5a65;
+$subTitleTextColor: #839db3;
+
+$sidebarWidth: 246px;
+$headerHeight: 72px;
+
+// breakpoint
+$breakpoint-small: 576px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 992px;
+$breakpoint-xlarge: 1200px;
+$breakpoint-xXlarge: 1360px;
+
+@mixin displayPart($align, $justify) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+@mixin gridSection($cardWidth, $gap) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($cardWidth, 1fr));
+  gap: $gap;
+}
+
+@mixin fontcountrol($color, $font-size, $font-weight) {
+  color: color($color);
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: normal;
+  font-family: "proxima-nova", sans-serif;
+}
+@mixin button($background, $color) {
+  border-radius: $roundCorner;
+  background: $background;
+  color: $color;
+  font-size: 16px;
+  font-weight: 500;
+  gap: 5px;
+  border: unset;
+  font-family: "Outfit" !important;
+  @include displayPart(flex, center, center);
+  padding: 15px 25px;
+  @include respondLayout($breakpoint-medium) {
+    padding: 13px 20px;
+  }
+}
+@mixin respondLayout($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin icon($height, $width) {
+  transition-duration: 0.5s;
+  position: absolute;
+  height: $height;
+  width: $width;
+  top: 14px;
+  background: $title;
+}
+@function color($color) {
+  @return $color;
+}
+@mixin floatSection() {
+  float: left;
+  width: 100%;
+  display: block;
+}
+
+.main {
+  @include floatSection();
+  app-header {
+    @include floatSection();
+  }
+
+  &-section {
+    @include floatSection();
+  }
+  .inner-section {
+    padding: 12px 12px 12px calc($sidebarWidth + 10px);
+    height: calc(100vh - $headerHeight);
+    overflow: auto;
+    @include respondLayout($breakpoint-medium) {
+      padding: 12px;
+    }
+  }
+}
+
+.page-header {
+  background: color($white);
+  border-radius: 8px;
+  padding-bottom: 10px;
+  h3 {
+    @include fontcountrol($sudHeaderColor, 16px, 700);
+    padding: 12px;
+    @include displayPart(center, start);
+    gap: 10px;
+    .mat-icon {
+      color: currentColor;
+    }
+
+    border-bottom: 1.5px solid $BackgroundColor;
+  }
+  .page-text {
+    @include fontcountrol($subTextColor, 12px, 400);
+
+    padding: 10px 10px 10px 46px;
+    border: solid $BackgroundColor;
+    border-bottom: 1.5px;
+    background-color: $secondaryColor;
+  }
+  .grid-list-button {
+    @include displayPart(center, space-between);
+  }
+}

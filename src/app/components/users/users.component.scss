@@ -1,0 +1,86 @@
+@import "../../app.component.scss";
+
+.button-group {
+  @include displayPart(center, space-between);
+  padding: 3px;
+  border: 1px solid $subTitleTextColor;
+  border-radius: 5px;
+  margin-right: 16px;
+  button {
+    all: unset;
+    padding-inline: 5px;
+    position: relative;
+
+    &:first-child::after {
+      content: "";
+      width: 1.5px;
+      height: 65%;
+      top: 13%;
+      right: 0;
+      position: absolute;
+      background-color: color($subTitleTextColor);
+    }
+    &.active {
+      .mat-icon {
+        color: color($PrimaryColor);
+      }
+    }
+  }
+}
+.user-grid {
+  @include gridSection(240px, 20px);
+  padding-block: 30px;
+
+  .user-card {
+    padding-top: 55px;
+    text-align: center;
+    max-width: 300px;
+    .card-img {
+      width: 130px;
+      margin: auto;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      margin-top: -55px;
+      max-width: 90%;
+      position: relative;
+      margin-bottom: 30px;
+      img {
+        width: 130px;
+        height: 130px;
+      }
+      .icon {
+        position: absolute;
+        bottom: 0;
+        right: -4px;
+        padding: 4px;
+        aspect-ratio: 1;
+        background: color($PrimaryColor);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 3px solid color($white);
+        .mat-icon {
+          color: color($white);
+        }
+      }
+    }
+    mat-card-title.mat-mdc-card-title {
+      @include fontcountrol($PrimaryColor, 22px, 700);
+    }
+    mat-card-content.mat-mdc-card-content {
+      @include fontcountrol($sudHeaderColor, 16px, 400);
+      padding: 20px 0;
+    }
+    .mat-mdc-card {
+      box-shadow: unset;
+      padding-inline: 10px;
+    }
+  }
+}
+.user-table {
+  img {
+    width: 30px;
+    height: 30px;
+  }
+}

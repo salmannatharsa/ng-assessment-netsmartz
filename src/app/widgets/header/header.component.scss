@@ -1,0 +1,24 @@
+@import "../../app.component.scss";
+
+header {
+  @include displayPart(center, space-between);
+  background-color: color($white);
+  padding: 14px 30px;
+  @include respondLayout($breakpoint-medium) {
+    padding: 14px;
+  }
+  .profile-section {
+    @include displayPart(center, space-between);
+    gap: 20px;
+    .profile {
+      width: 44px;
+      aspect-ratio: 1;
+      @include displayPart(center, center);
+      background: color($PrimaryColor);
+      border-radius: 50%;
+      h1 {
+        @include fontcountrol($white, 20px, 700);
+      }
+    }
+  }
+}

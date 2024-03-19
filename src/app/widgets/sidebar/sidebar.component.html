@@ -1,0 +1,42 @@
+<div class="sidebar" [class.active]="isActive">
+  <h3>Menu</h3>
+  <div class="menu-icon" (click)="toggleActive()">
+    <mat-icon>menu_open</mat-icon>
+  </div>
+
+  <ul>
+    <a
+      href="javascript:void(0)"
+      routerLink="/"
+      routerLinkActive="active"
+    >
+      <li>
+        <mat-icon matBadge="15" matBadgeColor="warn"
+          >dashboard_customize</mat-icon
+        >Home
+      </li>
+    </a>
+    <a
+      href="javascript:void(0)"
+      routerLink="/users"      
+      routerLinkActive="active"    
+    >
+      <li>
+        <mat-icon matBadge="15" matBadgeColor="warn"
+          >dashboard_customize</mat-icon
+        >Users
+      </li>
+    </a>
+    <a
+      href="javascript:void(0)"
+      routerLink="/blogs"
+      routerLinkActive="active"
+    >
+      <li>
+        <mat-icon matBadge="15" matBadgeColor="warn"
+          >dashboard_customize</mat-icon
+        >Blogs
+      </li>
+    </a>
+  </ul>
+</div>

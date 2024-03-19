@@ -1,0 +1,17 @@
+<app-sub-header [title]="title" [description]="subtext"></app-sub-header>
+
+
+<div class="blogs" *ngFor="let blog of blogs">
+    <div class="blogs-card">
+        <div class="blogs-card-img"><img src="../../../assets/bg.jpg" alt=""></div>
+        <div class="blogs-card-body">
+            <h1>{{blog.title}}</h1>
+            <p>{{blog.body}}</p>
+            <a href="">Read More</a>
+            <div class="blogs-card-footer">
+                <p> <mat-icon>schedule</mat-icon> 22 July 2020</p>
+                <p> <mat-icon>account_circle</mat-icon>{{blog.userName}}</p>
+            </div>
+        </div>
+    </div>    
+</div>

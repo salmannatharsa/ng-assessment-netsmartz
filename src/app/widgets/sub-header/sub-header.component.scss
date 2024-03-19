@@ -1,0 +1,22 @@
+@import "../../app.component.scss";
+.page-header {
+  background: color($white);
+  border-radius: 8px;
+  padding-bottom: 10px;
+  h3 {
+    @include fontcountrol($sudHeaderColor, 16px, 700);
+    padding: 12px;
+    @include displayPart(center, start);
+    gap: 10px;
+    .mat-icon {
+      color: currentColor;
+    }
+  }
+  p {
+    @include fontcountrol($subTextColor, 12px, 400);
+    padding: 10px 10px 10px 46px;
+    border: solid $BackgroundColor;
+    border-width: 1.5px 0 1.5px 0;
+    background-color: $secondaryColor;
+  }
+}

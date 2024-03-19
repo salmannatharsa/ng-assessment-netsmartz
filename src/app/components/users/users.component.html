@@ -1,0 +1,98 @@
+<!-- Toggle View Buttons -->
+
+<div class="page-header">
+  <div class="grid-list-button">
+    <h3>
+      <mat-icon matBadge="15" matBadgeColor="warn">dashboard_customize</mat-icon
+      >Users
+    </h3>
+
+    <div class="button-group">
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="isGridView = true"
+        [class.active]="isGridView"
+      >
+        <mat-icon>view_module</mat-icon>
+      </button>
+
+      <button
+        mat-raised-button
+        color="accent"
+        (click)="isGridView = false"
+        [class.active]="!isGridView"
+      >
+        <mat-icon>view_list</mat-icon>
+      </button>
+    </div>
+  </div>
+  <p class="page-text">Total user : 12</p>
+</div>
+<!-- Grid View -->
+<div *ngIf="isGridView" class="user-grid">
+  <div *ngFor="let item of users" class="user-card">
+    <mat-card>
+      <div class="card-img">
+        <img src="../../../assets/user.png" alt="user image" />
+        <div class="icon"><mat-icon>send</mat-icon></div>
+      </div>
+      <mat-card-title>{{ item.name }}</mat-card-title>
+      <mat-card-content>{{ item.email }}</mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<!-- List View -->
+<div *ngIf="!isGridView">
+  <table datatable class="user-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Designation</th>
+        <th>Joining Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>
+          <img src="../../../assets/user.png" alt="user image" />
+        </td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>12 July 2020</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- <table mat-table [dataSource]="users" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </ng-container>
+    <ng-container matColumnDef="designation">
+      <th mat-header-cell *matHeaderCellDef>Designation</th>
+      <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+    </ng-container>
+    <ng-container matColumnDef="joiningdate">
+      <th mat-header-cell *matHeaderCellDef>Joining Date</th>
+      <td mat-cell *matCellDef="let element">12 July 2020</td>
+    </ng-container>
+    <tr
+      mat-header-row
+      *matHeaderRowDef="['id', 'name', 'designation', 'joiningdate']"
+    ></tr>
+    <tr
+      mat-row
+      *matRowDef="
+        let row;
+        columns: ['id', 'name', 'designation', 'joiningdate']
+      "
+    ></tr>
+  </table> -->
+</div>

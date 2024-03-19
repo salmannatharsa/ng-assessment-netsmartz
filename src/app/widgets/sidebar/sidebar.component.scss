@@ -1,0 +1,68 @@
+@import "../../app.component.scss";
+.sidebar {
+  position: absolute;
+  width: $sidebarWidth;
+  height: calc(100vh - $headerHeight);
+  background: color($white);
+  transition: 1s all;
+  .menu-icon .mat-icon {
+    position: absolute;
+    right: -20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 5px 0px 6px 1px #7575;
+    top: 2px;
+    color: color($PrimaryColor);
+    display: none;
+  }
+  @include respondLayout($breakpoint-medium) {
+    width: 180px;
+    transform: translateX(-180px);
+    .menu-icon .mat-icon {
+      display: block;
+    }
+    &.active {
+      transform: translateX(0px);
+    }
+  }
+
+  h3 {
+    @include fontcountrol($headerColor, 17px, 700);
+    padding: 8px 8px 20px 12px;
+    border: solid $BackgroundColor;
+    border-width: 1.5px 0 1.5px 0;
+    position: relative;
+    line-height: 27px;
+    &::after {
+      width: 4px;
+      height: 34px;
+      content: "";
+      left: 0;
+      top: 4px;
+      background: color($PrimaryColor);
+      position: absolute;
+      display: block;
+    }
+  }
+  ul {
+    padding: 8px;
+    li {
+      @include displayPart(center, start);
+      gap: 17px;
+      padding: 8px;
+      border-radius: 6px;
+      @include fontcountrol($PrimaryColor, 14px, 700);
+      .mat-icon {
+        color: currentColor;
+      }
+      &:hover {
+        @include fontcountrol($white, 14px, 700);
+        background: color($PrimaryColor);
+      }
+    }
+  }
+}
+.active {
+  @include fontcountrol($white, 14px, 700);
+  background: color($PrimaryColor);
+}

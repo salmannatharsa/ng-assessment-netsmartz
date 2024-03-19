@@ -1,0 +1,36 @@
+<app-sub-header
+  [title]="title"
+  [description]="description"
+></app-sub-header>
+
+<div class="totalCardSection">
+  <ng-container *ngFor="let card of totalCard">
+    <app-total-card
+      [icon]="card.icon"
+      [totalValue]="card.totalValue"
+      [text]="card.text"
+    ></app-total-card>
+  </ng-container>
+</div>
+
+<div class="page-header">
+  <h3>
+    <mat-icon matBadge="15" matBadgeColor="warn">dashboard_customize</mat-icon
+    >Recent Blogs
+  </h3>
+
+  <div class="blogs">
+    <div class="blogs-card" *ngFor="let count of recentBlogs">
+      <div class="blogs-img">
+        <img src="../../../assets/bg.jpg" alt="blog image" />
+      </div>
+      <h4>Lorem ipsum dolor</h4>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, omnis!
+        Ratione natus est quis numquam, amet ullam. Repellendus deserunt dolor
+        delectus similique, provident, necessitatibus tempora quidem impedit
+        officia omnis vel?
+      </p>
+    </div>
+  </div>
+</div>
