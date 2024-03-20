@@ -10,13 +10,14 @@ import { RouterLink } from '@angular/router';
   styleUrl: './sidebar.component.scss'
 })
 export class SidebarComponent {
-  addCustomClass: boolean = true;
-  isActive: boolean = false;
+  private addCustomClass: boolean = true;
+  public isActive: boolean = false;
 
-  toggleCustomClass() {
+  public toggleCustomClass() {
     this.addCustomClass = !this.addCustomClass;
   }
-  toggleActive() {
+  
+  public toggleActive() {
     this.isActive = !this.isActive;
   }
 }

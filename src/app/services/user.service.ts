@@ -11,7 +11,7 @@ export class UserService {
 
   constructor(private _httpClient: HttpClient) {}
 
-  getUsers(): Observable<UserModel[]> {
+  public getUsers(): Observable<UserModel[]> {
     let url = environment.baseUrl + 'users';
     return this._httpClient.get<UserModel[]>(url);
   }

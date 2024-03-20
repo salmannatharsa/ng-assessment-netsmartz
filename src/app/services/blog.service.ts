@@ -10,7 +10,7 @@ import { environment } from '../../environments/environment';
 export class BlogService {
   constructor(private _httpClient: HttpClient) {}
 
-  getBlogs(): Observable<BlogModel[]> {
+  public getBlogs(): Observable<BlogModel[]> {
     let url = environment.baseUrl + 'posts';
     return this._httpClient.get<BlogModel[]>(url);
   }

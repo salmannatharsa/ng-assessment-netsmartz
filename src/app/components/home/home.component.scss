@@ -29,7 +29,7 @@
     flex-direction: column;
     gap: 20px;
     h4 {
-      @include fontcountrol($headerColor, 20px, 700);
+      @include fontcountrol($headerColor, 19px, 700);
     }
     p {
       @include fontcountrol($sudHeaderColor, 14px, 400);

@@ -11,6 +11,6 @@ import { SidebarComponent } from './widgets/sidebar/sidebar.component';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'Assessment Project';
-  addCustomClass: boolean = true;
+  public title = 'Assessment Project';
+  public addCustomClass: boolean = true;
 }

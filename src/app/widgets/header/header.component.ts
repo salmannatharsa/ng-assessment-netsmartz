@@ -9,9 +9,9 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  addCustomClass: boolean = true;
+  private addCustomClass: boolean = true;
 
-  toggleCustomClass() {
+  public toggleCustomClass() {
     this.addCustomClass = !this.addCustomClass;
   }
 }

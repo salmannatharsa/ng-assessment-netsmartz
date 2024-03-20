@@ -1,5 +1,9 @@
 @import "../../app.component.scss";
-
+.blogs {
+  width: 50%;
+  float: left;
+  padding: 10px;
+}
 .blogs {
   padding-block: 20px;
   @include gridSection(500px, 20px);
@@ -15,7 +19,7 @@
     border-radius: 8px;
     background: #fff;    
     &-img {
-      flex: 1 1 189px;
+      flex: 1 1 100px;
       background: #75757575;
       border-radius: 8px;
       overflow: hidden;
@@ -31,26 +35,26 @@
       flex-direction: column;
       gap: 15px;
       h1 {
-        @include fontcountrol($headerColor, clamp(24px, 3vw, 35px), 700);
+        @include fontcountrol($headerColor, clamp(19px, 3vw, 19px), 700);
       }
       p {
-        @include fontcountrol($sudHeaderColor, 16px, 400);
+        @include fontcountrol($sudHeaderColor, 14px, 400);
       }
       a {
-        @include fontcountrol($PrimaryColor, 16px, 400);
+        @include fontcountrol($PrimaryColor, 14px, 400);
         text-decoration: underline;
       }
     }
     &-footer {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 0px;
       p {
         display: flex;
         align-items: center;
-        gap: 10px;
-        flex: 1 1 150px;
-        @include fontcountrol($sudHeaderColor, 16px, 400);
+        gap: 5px;
+        flex: 1 1 119px;
+        @include fontcountrol($sudHeaderColor, 14px, 400);
       }
     }
   }

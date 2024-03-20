@@ -17,8 +17,8 @@ import { DataTablesModule } from 'angular-datatables';
   styleUrl: './users.component.scss',
 })
 export class UsersComponent implements OnInit {
-  isGridView: boolean = true; //to determine whether it is grid view or table view
-  users: UserModel[] = []; //Stores user list
+  public isGridView: boolean = true; //to determine whether it is grid view or table view
+  public users: UserModel[] = []; //Stores user list
 
   constructor(private userService: UserService) {}
 

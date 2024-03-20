@@ -17,16 +17,16 @@ import { CommonModule } from '@angular/common';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  title: string = 'Home';
-  description: string = 'Home Page Description';
-  recentBlogs = [1, 2, 3, 4, 5]; //To loop the content to avoid duplication
+  public title: string = 'Home';
+  public description: string = 'Home Page Description';
+  public recentBlogs = [1, 2, 3, 4, 5]; //To loop the content to avoid duplication
 
-  icon: string = 'shopping_cart';
-  totalValue: string = 'shopping_cart';
-  text: string = 'shopping_cart';
+  public icon: string = 'shopping_cart';
+  public totalValue: string = 'shopping_cart';
+  public text: string = 'shopping_cart';
 
   //populating total card content
-  totalCard: any[] = [
+  public totalCard: any[] = [
     { id: 1, icon: 'shopping_cart', totalValue: '345', text: 'Total Orders' },
     {
       id: 2,

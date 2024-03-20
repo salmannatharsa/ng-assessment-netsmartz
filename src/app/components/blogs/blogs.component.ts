@@ -17,10 +17,10 @@ import { UserModel } from '../../models/user-model';
   styleUrl: './blogs.component.scss',
 })
 export class BlogsComponent implements OnInit {
-  title: string = 'Blogs';
-  subtext: string = 'Total user : 20';
-  blogs: BlogModel[] = []; //Stores blog list
-  users: UserModel[] = []; //Stores user list
+  public title: string = 'Blogs';
+  public subtext: string = 'Total user : 20';
+  public blogs: BlogModel[] = []; //Stores blog list
+  public users: UserModel[] = []; //Stores user list
 
   constructor(
     private blogService: BlogService,
@@ -31,15 +31,16 @@ export class BlogsComponent implements OnInit {
     //Loads users list and store it users array
     this.userService.getUsers().subscribe((u) => {
       this.users = u;
-    });
 
-    //Loads blogs list and store it in blogs arry.
-    //Update username on each row by mapping with userId column and users array id column
-    this.blogService.getBlogs().subscribe((b) => {
-      this.blogs = b;
-      this.blogs.map(
-        (b) => (b.userName = this.users.filter((u) => u.id == b.userId)[0].name)
-      );
+      //Loads blogs list and store it in blogs arry.
+      //Update username on each row by mapping with userId column and users array id column
+      this.blogService.getBlogs().subscribe((b) => {
+        this.blogs = b;
+        this.blogs.map(
+          (b) =>
+            (b.userName = this.users.filter((u) => u.id == b.userId)[0].name)
+        );
+      });
     });
   }
 }

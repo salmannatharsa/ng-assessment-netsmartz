@@ -43,15 +43,15 @@
       margin-top: -55px;
       max-width: 90%;
       position: relative;
-      margin-bottom: 30px;
+      margin-bottom: 10px;
       img {
-        width: 130px;
-        height: 130px;
+        width: 120px;
+        height: 120px;
       }
       .icon {
         position: absolute;
-        bottom: 0;
-        right: -4px;
+        bottom: 10px;
+        right: 0;
         padding: 4px;
         aspect-ratio: 1;
         background: color($PrimaryColor);
@@ -66,10 +66,10 @@
       }
     }
     mat-card-title.mat-mdc-card-title {
-      @include fontcountrol($PrimaryColor, 22px, 700);
+      @include fontcountrol($PrimaryColor, 19px, 700);
     }
     mat-card-content.mat-mdc-card-content {
-      @include fontcountrol($sudHeaderColor, 16px, 400);
+      @include fontcountrol($sudHeaderColor, 14px, 400);
       padding: 20px 0;
     }
     .mat-mdc-card {
